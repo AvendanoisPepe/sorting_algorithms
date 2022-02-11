@@ -15,7 +15,6 @@
 
 ## Data Structure and Functions
 
-------------
 For this project you are given the following print_array, and print_list functions:
 
 ```
@@ -91,6 +90,71 @@ Asymptotic notation is a set of languages which allow us to express the performa
 
 
 ![](https://raw.githubusercontent.com/developerinsider/developer-insider-content/master/POST/C/Tuto/BigO/BigOComplexity.png)
+
+## Main orders of complexity
+
+|  Order | Name |
+| ------------ | ------------ |
+| O(1)  | constante |
+| O(log n) | logarítmica |
+| O(n) | lineal |
+| O(n log n) | casi lineal |
+| O(n^²) | cuadrática |
+| O(n^³) | cúbica |
+| O(2^n) | exponencial |
+
+## Examples:
+
+# O(1)
+```
+void f(int n)
+{
+    printf("n = %d\n", n);
+}
+```
+This function runs in O(1) time (or "constant time") relative to its input. The input array could be 1 item or 1,000 items, but this function would still just require one step.
+
+# O(n)
+```
+void f(int n)
+{
+    int i;
+
+    for (i = 0; i < n; i++)
+    {
+        printf("[%d]\n", i);
+    }
+}
+```
+This function runs in O(n) time (or "linear time"), where n is the number of items in the array. If the array has 10 items, we have to print 10 times. If it has 1000 items, we have to print 1000 times.
+
+# O(n^2)
+```
+void f(int n)
+{
+    int i;
+    int j;
+
+    for (i = 0; i < n; i++)
+    {
+        if (i % 2 == 0)
+        {
+            for (j = 1; j < n; j = j * 2)
+            {
+                printf("[%d] [%d]\n", i, j);
+            }
+        }
+        else
+        {
+            for (j = 0; j < n; j = j + 2)
+            {
+                printf("[%d] [%d]\n", i, j);
+            }
+        }
+    }
+}
+```
+Here we're nesting two loops. If our array has n items, our outer loop runs n times and our inner loop runs n times for each iteration of the outer loop, giving us n2 total prints. Thus this function runs in O(n2) time (or "quadratic time"). If the array has 10 items, we have to print 100 times. If it has 1000 items, we have to print 1000000 times.
 
 ------------
 
