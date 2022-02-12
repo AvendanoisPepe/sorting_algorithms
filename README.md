@@ -168,6 +168,8 @@ Here we're nesting two loops. If our array has n items, our outer loop runs n ti
 | 1-O  | Write in the file 1-O, the big O notations of the time complexity of the Insertion sort algorithm, with 1 notation per line: | Mandatory |
 | 2-selection_sort.c |Write a function that sorts an array of integers in ascending order using the Selection sort algorithm | Mandatory |
 | 2-O |Write in the file 2-O, the big O notations of the time complexity of the Selection sort algorithm, with 1 notation per line: | Mandatory |
+| 3-quick_sort.c | Write a function that sorts an array of integers in ascending order using the Quick sort algorithm | Mandatory |
+| 3-O | Write in the file 3-O, the big O notations of the time complexity of the Quick sort algorithm, with 1 notation per line: | Mandatory |
 
 ------------
 
