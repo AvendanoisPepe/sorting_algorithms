@@ -12,7 +12,6 @@ void shell_sort(int *array, size_t size)
 	incr = 1;
 	while (incr <= (size - 1) / 9)
 		incr = 3 * incr + 1;
-	printf("%ld", incr);
 	while (incr >= 1)
 	{
 		for (i = incr; i < size; i++)
@@ -23,5 +22,6 @@ void shell_sort(int *array, size_t size)
 			array[j + incr] = k;
 		}
 		incr = incr / 3;
+		print_array(array, size);
 	}
 }
