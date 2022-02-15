@@ -1,27 +1,34 @@
 #include "sort.h"
+
 /**
- * shell_sort - Ordena una particion de una matrix de enteros.
- * @array: Puntero a la matrix.
- * @size: Tamaño de la matrix.
+ * shell_sort -  sorting by shell method
+ * @array: pointer to array
+ * @size: size of array
  */
+
 void shell_sort(int *array, size_t size)
 {
-	int j, k;
-	size_t incr, i;
+	unsigned int in, out, h = 1;
+	int temp;
 
-	incr = 1;
-	while (incr <= (size - 1) / 9)
-		incr = 3 * incr + 1;
-	while (incr >= 1)
+	if (size < 2)
+		return;
+	while (h <= size / 3)
+		h = h * 3 + 1;
+	while (h > 0)
 	{
-		for (i = incr; i < size; i++)
+		for (out = h; out < size; out++)
 		{
-			k = array[i];
-			for (j = i - incr; j >= 0 && k < array[j]; j = j - incr)
-				array[j + incr] = array[j];
-			array[j + incr] = k;
+			temp = array[out];
+			in = out;
+			while (in > h - 1 && array[in - h] >= temp)
+			{
+				array[in] = array[in - h];
+				in = in - h;
+			}
+			array[in] = temp;
 		}
-		incr = incr / 3;
+		h = (h - 1) / 3;
 		print_array(array, size);
 	}
 }
